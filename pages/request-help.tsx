@@ -19,7 +19,7 @@ export default function RequestHelpPage() {
       try {
         const res = await fetch("https://script.google.com/macros/s/AKfycbzf7BMYPRmksgitStksJ_ZmXJVcp0iX3g7075X_DndlWa6pfaGLh5Ynf9zjW1YbsFgsDA/exec");
         const data = await res.json();
-        const formatted = data.map((entry: any) => ({
+        const formatted: RequestItem[] = data.map((entry: any) => ({
           topic: entry.topic,
           votes: Number(entry.votes) || 0,
           status: entry.status || ""
@@ -196,25 +196,25 @@ export default function RequestHelpPage() {
         )}
 
         <div className="absolute top-4 right-4 text-xs text-sky-300">
-          <button
-            onClick={() => setShowAdminInput(!showAdminInput)}
-            className="underline hover:text-white"
-          >
-            Admin Login
-          </button>
-          {showAdminInput && (
-            <div className="mt-2">
-              <label htmlFor="admin-password" className="sr-only">Admin Password</label>
-              <input
-                id="admin-password"
-                type="password"
-                placeholder="Enter password"
-                onChange={(e) => setIsAdmin(e.target.value === 'IPAdmin')}
-                className="px-2 py-1 rounded bg-sky-800 border border-sky-600 text-white focus:outline-none focus:ring-1 focus:ring-sky-400"
-              />
-            </div>
-          )}
-        </div>
+  <button
+    onClick={() => setShowAdminInput(!showAdminInput)}
+    className="underline hover:text-white"
+  >
+    Admin Login
+  </button>
+  {showAdminInput && (
+    <div className="mt-2">
+      <label htmlFor="admin-password" className="sr-only">Admin Password</label>
+      <input
+        id="admin-password"
+        type="password"
+        placeholder="Enter password"
+        onChange={(e) => setIsAdmin(e.target.value === 'IPAdmin')}
+        className="px-2 py-1 rounded bg-sky-800 border border-sky-600 text-white focus:outline-none focus:ring-1 focus:ring-sky-400"
+      />
+    </div>
+  )}
+</div>
       </div>
     </>
   );
