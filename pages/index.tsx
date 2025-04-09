@@ -3,15 +3,15 @@ import { useState } from "react";
 import { Plane } from "lucide-react";
 import { motion } from "framer-motion";
 
-function Card({ children, className = "" }) {
+function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return <div className={`rounded-2xl border p-2 ${className}`}>{children}</div>;
 }
 
-function CardContent({ children, className = "" }) {
+function CardContent({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return <div className={className}>{children}</div>;
 }
 
-function Button({ children, variant = "primary", className = "" }) {
+function Button({ children, variant = "primary", className = "" }: { children: React.ReactNode; variant?: string; className?: string }) {
   const base =
     variant === "secondary"
       ? "bg-sky-700 hover:bg-sky-600 text-white"
