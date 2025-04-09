@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Plane } from "lucide-react";
 import { motion } from "framer-motion";
@@ -84,21 +85,21 @@ export default function HomePage() {
         ></div>
 
         <header className="mb-10 text-center">
-          <motion.h1
+          <motion.div
             className="text-3xl md:text-4xl font-bold mb-2"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Welcome to The Ready Room
-          </motion.h1>
-          <motion.p
+            <h1>Welcome to The Ready Room</h1>
+          </motion.div>
+          <motion.div
             className="text-base md:text-lg text-sky-200"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Your UNOFFICIAL go-to resource for mastering aviation
-          </motion.p>
+            <p>Your UNOFFICIAL go-to resource for mastering aviation</p>
+          </motion.div>
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
